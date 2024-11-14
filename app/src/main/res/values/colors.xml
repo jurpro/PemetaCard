@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!--    gender color-->
+    <color name="red">#EB5757</color>
+    <color name="blue">#006AF6</color>
+
+    <!--    Type Report -->
+    <color name="card">#F9F9F9</color>
+
+    <color name="road_planing_color">#1264C8</color>
+    <color name="road_supervision_color">#C8B482</color>
+    <color name="bridge_supervision_color">#DD1846</color>
+    <color name="bridge_planning_color">#797C46</color>
+    <color name="other_color">#8246BE</color>
+
+    <!--Text color-->
+    <color name="text">#1E3054</color>
+
+    <color name="yellow">#fff6ba00</color>
+    <color name="purple_900">#ff82008f</color>
+    <color name="purple_400">#CD87D5</color>
+
+    <color name="pink">#F06292</color>
+    <color name="navi">#2D3D4F</color>
+
+    <color name="orange_500">#EA5C2B</color>
+    <color name="orange_250">#FF7F3F</color>
+    <color name="green_orange">#F6D860</color>
+    <color name="green_light">#95CD41</color>
+    <color name="green_purple">#E7FBBE</color>
+    <color name="purple_light">#D9D7F1</color>
+    <color name="pink_purple">#FFCBCB</color>
+
+    <!-- Color Pemeta Style -->
+    <color name="pemeta_primary">#3D6A00</color>
+    <color name="pemeta_secondary">#57624A</color>
+    <color name="pemeta_tertiary">#386663</color>
+    <color name="pemeta_error">#BA1A1A</color>
+    <color name="pemeta_neutral">#5E5F59</color>
+    <color name="pemeta_neutral_variant">#5C6054</color>
+</resources>

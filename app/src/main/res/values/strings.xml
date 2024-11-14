@@ -1,0 +1,148 @@
+<resources>
+    <string name="app_name">Pemeta Card</string>
+
+    //Logo Info
+    <string name="logo_info">Logo Pemeta 2024</string>
+
+    //Bottom Navigation
+    <string name="menu_home">Home</string>
+    <string name="menu_favorite">Favorite</string>
+    <string name="menu_chat_celebrity">Celebrity</string>
+    <string name="menu_profile">Profile</string>
+    <string name="menu_about">About</string>
+    <string name="menu_camera">Camera</string>
+    <string name="menu_maps">Maps</string>
+    <string name="menu_partner">Partner</string>
+    <string name="menu_experience">Pengalaman</string>
+    <string name="menu_search">Seacrh</string>
+
+    // Top Bar
+    <string name="topbar_status">Gold Level</string>
+    <string name="topbar_profile">Profile</string>
+    <string name="topbar_inbox">Inbox</string>
+    <string name="topbar_absensi">Absensi</string>
+
+    //Search
+    <string name="placeholder_search">Cari laporan</string>
+    <string name="welcome_message">Selamat datang</string>
+    <string name="welcome_message_1">Info: Pemeta Monitoring System saat ini sedang mengembangkan aplikasi untuk pelaporan lapangan. Silakan berselancar sesuka Anda.</string>
+    <string name="scroll_to_top">Scroll to top</string>
+
+    //Banner Home
+    <string name="banner_promotion">Promotion</string>
+    <string name="banner_promotion_1">Kunjungan Bapak Menteri PUPR</string>
+    <string name="banner_promotion_2">Basuki Hadimuljono</string>
+    <string name="banner_promotion_3">Paket 5 Pengawasan Pembangunan Jalan Planjan-Baron-Tepus\nJalan Lintas Selatan Prov. DIY</string>
+    <string name="list_recent_report">Laporan Terbaru</string>
+    <string name="list_recent_report_more">More Recent Report</string>
+    <string name="list_experiences">Pengalaman Pemeta</string>
+    <string name="list_experiences_more">More Pengalaman Pemeta</string>
+
+    //Detail Page Pengalaman Perusahaan
+    <string name="detail_experience_info">Detail Pengalaman</string>
+    <string name="detail_experience_info_card">Informasi Singkat</string>
+    <string name="detail_experience_description">Uraian Singkat</string>
+    <string name="detail_experience_client">Pemilik Pekerjaan</string>
+    <string name="detail_experience_partner">Partner KSO</string>
+    <string name="detail_experience_year_begin">Mulai</string>
+    <string name="detail_experience_year_end">Selesai</string>
+    <string name="detail_experience_period">Periode Pelaksanaan</string>
+    <string name="detail_experience_amount">Nilai Kontrak</string>
+    <string name="detail_experience_contract_number">Nomor Kontrak</string>
+
+    //Detail Client Information
+    <string name="detail_client_code">Satker </string>
+    <string name="detail_client_name">Full Name</string>
+    <string name="detail_client_address">Alamat</string>
+
+    //Detail Page Information
+    <string name="detail_animal_info">Report Info</string>
+    <string name="detail_animal_info_age">Age</string>
+    <string name="detail_animal_info_color">Color</string>
+    <string name="detail_animal_info_weight">Weight</string>
+    <string name="detail_animal_info_health">Health</string>
+
+    <string name="detail_report_description">Description</string>
+    <string name="detail_report_owner">Owner Info</string>
+    <string name="detail_report_button_send">Send a Report</string>
+
+    <string name="animal_type_1">Cat</string>
+    <string name="animal_type_2">Dog</string>
+    <string name="animal_type_3">Bird</string>
+    <string name="animal_type_4">Snake</string>
+    <string name="animal_type_5">Others</string>
+
+    // Halaman Profile
+    <string name="profile_title">Profile Saya</string>
+    <string name="profile_name">Sandra Bullock</string>
+    <string name="profile_email">ujanglukmanbdg@gmail.com</string>
+    <string name="profile_bio">Menikmati masa muda dengan bijaksana, memanfaatkan masa remaja dengan bijaksini.</string>
+    <string name="profile_address">Bandung, Indonesia</string>
+    <string name="profile_favorite">Anggun and Tom Cruise</string>
+    <string name="profile_favorite_animal">Kucing</string>
+
+    // Halaman About
+    <string name="about_pemeta_0">Sampurasun</string>
+    <string name="about_pemeta_1">Aplikasi Pemeta Monitoring System dibuat untuk memudahkan proses pengawasan di lapangan juga untuk mengkordinir pekerjaan perencanaan.</string>
+    <string name="about_pemeta_2">Selain itu, aplikasi ini menyediakan informasi pengalaman perusahaan selama 10 tahun terakhir.</string>
+    <string name="about_pemeta_3">Pada tahap pengembangan ini, kami harap Anda dapat memberikan masukan atas kemudahan dan kekurangan fitur-fitur yang berhubungan dengan pekerjaan.\nTerima kasih.</string>
+
+    <string name="error">Error</string>
+
+    // Company Detail
+    <string name="company_name">Pemeta</string>
+    <string name="company_full_name">PT. Pemeta Engineering System</string>
+    <string name="company_address">Jl. Suryalaya Barat I No. 7 Bandung 40265</string>
+    <string name="company_phone">Telp./Fax. 022–7302423</string>
+    <string name="company_email">email: pt_pemeta@yahoo.co.id</string>
+    <string name="company_inkindo">Anggota INKINDO Nomor 2217/P/293.JB</string>
+    <string name="company_ceo">Luthfi Djatnika, SE.</string>
+    <string name="company_director">Lukmanul Hakim, S.Kom.</string>
+    <string name="company_commissioner">Nia Restiana, S.Sos.</string>
+
+    //Development Mode
+    <string name="clickable_dev_detail">Come and see another time periodicly because this feature is on development right now.</string>
+    <string name="clickable_budget_detail">Paket ini dibiayai oleh dana </string>
+
+    // Maps
+    <string name="main_activity_title">"Maps Compose Demos \uD83D\uDDFA"</string>
+    <string name="basic_map_activity">Basic Map</string>
+    <string name="map_in_column_activity">Map In Column</string>
+    <string name="map_clustering_activity">Map Clustering</string>
+    <string name="location_tracking_activity">Location Tracking</string>
+    <string name="scale_bar_activity">Scale Bar</string>
+    <string name="street_view">Street View</string>
+
+    <string name="map_detail_report">Map Detail</string>
+
+    <string name="absensi_title">Absensi</string>
+    <string name="absensi_title_header">Absensi Karyawan</string>
+    <string name="absensi_tap_hadir">Absen Masuk</string>
+    <string name="absensi_tap_pulang">Absen Pulang</string>
+    <string name="absensi_hadir">Anda Sudah Absen Hadir</string>
+    <string name="absensi_belum_hadir">Anda Belum Melakukan Absen Hari Ini</string>
+
+    // Upload Page
+    <string name="upload_title">Upload a Report</string>
+    <string name="upload_open_camera">Open Camera</string>
+    <string name="upload_open_gallery">Get From Gallery</string>
+    <string name="upload_menu_description">Deskripsi</string>
+    <string name="upload_menu_location">Lokasi</string>
+    <string name="upload_menu_send">Kirim</string>
+    <string name="upload_menu_cancel">Batal</string>
+
+    //Copyright
+    <string name="pemeta_copyright">Pemeta Engineering System, PT. \n &#169;2024 Pemeta. All rights reserved \nVersion 1.0.0</string>
+
+    //Category
+    <string name="category_planning">Perencanaan</string>
+    <string name="category_supervision">Pengawasan</string>
+    <string name="category_road">Jalan</string>
+    <string name="category_bridge">Jembatan</string>
+
+    // Halaman About
+    <string name="about_pemetacard_0">Sampurasun</string>
+    <string name="about_pemetacard_1">Perkenalkan kami dari Tarucing yang saat ini sedang mengembangkan berbagai aplikasi, salah satunya adalah aplikasi yang sedang Anda gunakan yaitu, Tarucing Pet.</string>
+    <string name="about_pemetacard_2">Tarucing Pet adalah aplikasi koleksi hewan lucu peliharaan selebritis dunia. Untuk saat ini, koleksi-koleksi tersebut datang dari Angelina Jolie, Julia Roberts, Tom Cruise, Bruce Willis, dan Anggun.</string>
+    <string name="about_pemetacard_3">Semoga Anda dapat menemukan koleksi-koleksi cantik dari peliharaan para selebritis dunia tersebut.</string>
+</resources>
