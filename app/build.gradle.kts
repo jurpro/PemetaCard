@@ -1,18 +1,18 @@
+
 plugins {
     alias(libs.plugins.android.application)
-    alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.maps.secret)
 }
 
 android {
     namespace = "com.pemeta.pemetacard"
-    compileSdk = 35
+    compileSdk = 37
 
     defaultConfig {
         applicationId = "com.pemeta.pemetacard"
-        minSdk = 30
-        targetSdk = 35
+        minSdk = 31
+        targetSdk = 37
         versionCode = 1
         versionName = "1.0"
 
@@ -29,12 +29,10 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
-    kotlinOptions {
-        jvmTarget = "11"
-    }
+
     buildFeatures {
         compose = true
     }
@@ -49,7 +47,6 @@ dependencies {
     implementation(libs.androidx.ui)
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
-    implementation(libs.androidx.material3)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -67,31 +64,36 @@ dependencies {
     // Feature module support for Fragments
     implementation(libs.androidx.navigation.dynamic.features.fragment)
     // Testing Navigation
-    androidTestImplementation(libs.androidx.navigation.testing)
+    androidTestImplementation (libs.navigation.testing)
+    implementation (libs.androidx.runtime.livedata)
 
     // navigation dan material design 3
     implementation (libs.material3)
     implementation (libs.androidx.material3)
+    // Adaptive screen phone and Dynamic Navigation
+    implementation (libs.androidx.material3.adaptive.navigation.suite)
+    implementation(libs.androidx.material3.adaptive)
+    implementation(libs.androidx.material3.adaptive.layout)
+    implementation(libs.androidx.material3.adaptive.navigation)
     // implementation (libs.material3.window.size.class)
+    implementation(libs.androidx.material.icons.extended.android)
 
     // Permission
     implementation(libs.accompanist.permissions)
     implementation(libs.coil.compose)
 
-
     //animation
     implementation (libs.accompanist.navigation.animation)
 
-    implementation (libs.androidx.navigation.compose)
+ //   implementation (libs.androidx.navigation.compose)
     implementation (libs.androidx.core.splashscreen)
     implementation (libs.accompanist.flowlayout)
     implementation (libs.androidx.lifecycle.viewmodel.compose)
 
     // Maps
+    // Android Maps Compose composables for the Maps SDK for Android
     implementation(libs.maps.compose)
     implementation(libs.play.services.maps)
-    // Android Maps Compose composables for the Maps SDK for Android
-    implementation(libs.maps.compose.v610)
     //Secret Key-Maps
     implementation(libs.secrets.gradle.plugin)
 
@@ -100,9 +102,9 @@ dependencies {
     // Optionally, you can include the widgets library for ScaleBar, etc.
     implementation(libs.maps.compose.widgets)
     // KTX for the Maps SDK for Android
-    implementation(libs.maps.ktx)
+    //  implementation(libs.maps.ktx)
     // (Optional) KTX for the Maps SDK for Android Utility Library
-    implementation(libs.maps.utils.ktx)
+    //  implementation(libs.maps.utils.ktx)
     // Utilities for Maps SDK for Android (requires Google Play Services)
     implementation(libs.android.maps.utils)
 
@@ -120,4 +122,11 @@ dependencies {
     implementation (libs.androidx.camera.mlkit.vision)
     // If you want to additionally use the CameraX Extensions library
     implementation (libs.androidx.camera.extensions)
+
+    implementation("io.coil-kt.coil3:coil-compose:3.6.3")
+    implementation("io.coil-kt.coil3:coil-network-okhttp:3.6.3")
+
+    //Liquid Glass
+    implementation(libs.backdrop)
+    implementation(libs.kyant.shapes)
 }

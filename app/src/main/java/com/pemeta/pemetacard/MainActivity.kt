@@ -1,5 +1,7 @@
 package com.pemeta.pemetacard
 
+import android.annotation.SuppressLint
+import android.os.Build
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -15,9 +17,15 @@ import com.pemeta.pemetacard.ui.screen.PemetaCard
 import com.pemeta.pemetacard.ui.theme.PemetaCardTheme
 
 class MainActivity : ComponentActivity() {
+    @SuppressLint("ObsoleteSdkInt")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            window.isNavigationBarContrastEnforced = false
+        }
+
         setContent {
             PemetaCardTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
@@ -33,6 +41,22 @@ class MainActivity : ComponentActivity() {
 @Preview(showBackground = true, device = Devices.PIXEL_7_PRO)
 @Composable
 fun GreetingPreview() {
+    PemetaCardTheme {
+        PemetaCard()
+    }
+}
+
+@Preview(showBackground = true, widthDp = 700)
+@Composable
+fun GreetingPreviewTablet() {
+    PemetaCardTheme {
+        PemetaCard()
+    }
+}
+
+@Preview(showBackground = true, widthDp = 1000)
+@Composable
+fun GreetingPreviewDesktop() {
     PemetaCardTheme {
         PemetaCard()
     }

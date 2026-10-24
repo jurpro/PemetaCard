@@ -21,87 +21,101 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.pemeta.pemetacard.R
-import com.pemeta.pemetacard.model.DataPemetaExperience
+import com.pemeta.pemetacard.model.address.data.LocationData
+import com.pemeta.pemetacard.model.pengalaman.coredata.DataPemetaExperience
+import com.pemeta.pemetacard.model.pengalaman.model.JobType
+import com.pemeta.pemetacard.model.pengalaman.model.ServiceBudget
+import com.pemeta.pemetacard.ui.screen.experience.detail.periodValue
 import com.pemeta.pemetacard.ui.theme.PemetaCardTheme
 
 @Composable
 fun ItemExperienceInfoCard(
     title: String,
-    type: String,
-    serviceBudget: String,
+    type: JobType,
+    serviceBudget: ServiceBudget,
     period: String,
-    location: String
+    location: String,
+    navController: NavController,
+    modifier: Modifier = Modifier
 ) {
-    Row(modifier = Modifier
-        .fillMaxWidth()
-        .padding(16.dp)) {
+    Column(
+        verticalArrangement = Arrangement.Center,
+        modifier = modifier
+            .fillMaxWidth()
+            .padding(16.dp)
+    ) {
+        Text(
+            text = title,
+            modifier = modifier.padding(0.dp, 0.dp, 12.dp, 8.dp),
+            color = MaterialTheme.colorScheme.onBackground,
+            fontWeight = FontWeight.Bold,
+            style = MaterialTheme.typography.labelLarge,
+        )
 
-        Column(modifier = Modifier
-            .align(Alignment.CenterVertically)
+        Row(
+            verticalAlignment = Alignment.Top,
+            horizontalArrangement = Arrangement.SpaceBetween,
+            modifier = modifier
+                .align(Alignment.CenterHorizontally)
+                .fillMaxWidth()
         ) {
-            Text(
-                text = title,
-                modifier = Modifier.padding(0.dp, 0.dp, 12.dp, 8.dp),
-                color = MaterialTheme.colorScheme.onBackground,
-                fontWeight = FontWeight.Bold,
-                style = MaterialTheme.typography.labelLarge,
-            )
+            Column(modifier = modifier
+                .align(Alignment.Top)
+               // .padding(top = 8.dp)
+            ) {
+                Row(verticalAlignment = Alignment.Bottom) {
 
-            Row(modifier = Modifier.align(Alignment.CenterHorizontally)) {
-                Column(modifier = Modifier
-                    .align(Alignment.Top)
-                    .padding(top = 8.dp)
-                ) {
-                    Row(verticalAlignment = Alignment.Bottom) {
+                    val locationIcon: Painter = painterResource(id = R.drawable.ic_location_project)
 
-                        val locationIcon: Painter = painterResource(id = R.drawable.ic_location_project)
-
-                        Icon(
-                            painter = locationIcon,
-                            contentDescription = null,
-                            modifier = Modifier
-                                .size(16.dp, 16.dp)
-                                .align(Alignment.CenterVertically),
-                            tint = Color.Red
-                        )
-
-                        Text(
-                            text = location,
-                            modifier = Modifier
-                                .align(Alignment.Top)
-                                .padding(8.dp, 12.dp, 12.dp, 0.dp),
-                            color = MaterialTheme.colorScheme.onBackground,
-                            style = MaterialTheme.typography.labelMedium
-                        )
-                    }
-
-                    Spacer(modifier = Modifier.height(16.dp))
+                    Icon(
+                        painter = locationIcon,
+                        contentDescription = null,
+                        modifier = modifier
+                            .size(16.dp, 16.dp)
+                            .align(Alignment.CenterVertically),
+                        tint = Color.Red
+                    )
 
                     Text(
-                        text = period,
-                        modifier = Modifier.padding(0.dp, 0.dp, 12.dp, 0.dp),
+                        text = location,
+                        modifier = modifier
+                            .align(Alignment.Top)
+                            .padding(8.dp, 8.dp, 12.dp, 0.dp),
                         color = MaterialTheme.colorScheme.onBackground,
-                        style = MaterialTheme.typography.bodySmall
+                        style = MaterialTheme.typography.labelMedium
                     )
                 }
 
-                Spacer(modifier = Modifier.width(8.dp))
+                Spacer(modifier = modifier.height(16.dp))
 
-                Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.End) {
-                    Column(
-                        modifier = Modifier
-                            .align(Alignment.CenterVertically)
-                            .padding(8.dp, 0.dp, 8.dp, 0.dp),
-                        verticalArrangement = Arrangement.SpaceBetween
-                    ) {
-                        ServiceBudgetTypeTag(serviceBudget)
+                Text(
+                    text = period,
+                    modifier = modifier.padding(0.dp, 0.dp, 12.dp, 0.dp),
+                    color = MaterialTheme.colorScheme.onBackground,
+                    style = MaterialTheme.typography.labelSmall
+                )
+            }
 
-                        Spacer(modifier = Modifier.height(8.dp))
+            Column(
+                modifier = modifier
+                    .align(Alignment.Top)
+                    .padding(8.dp, 8.dp, 8.dp, 0.dp),
+                verticalArrangement = Arrangement.Top
+            ) {
+                ServiceBudgetTypeTag(
+                    serviceBudget = serviceBudget,
+                    navController = navController
+                )
 
-                        ExperienceTag(type)
-                    }
-                }
+                Spacer(modifier = modifier.height(8.dp))
+
+                ExperienceTag(
+                    experienceType = type,
+                    navController = navController
+                )
             }
         }
     }
@@ -111,15 +125,20 @@ fun ItemExperienceInfoCard(
 @Composable
 fun ItemExperienceInfoCardPreview(){
     PemetaCardTheme {
-
-        val ExperienceInfoDataPreview = DataPemetaExperience.CompanyExperienceList[0]
+        val experienceInfoDataPreview = DataPemetaExperience.CompanyExperienceList[0]
+        val periodValue = periodValue(experienceInfoDataPreview)
+        val jobLocation: List<String> = experienceInfoDataPreview.location.map { key ->
+            LocationData.provinceData[key] ?: "Lokasi Tidak Ada ($key)"
+        }
+        val location = jobLocation.joinToString ( ",\n" )
 
         ItemExperienceInfoCard(
-            title = ExperienceInfoDataPreview.title,
-            type = ExperienceInfoDataPreview.type,
-            serviceBudget = ExperienceInfoDataPreview.serviceBudget,
-            period = ExperienceInfoDataPreview.period,
-            location = ExperienceInfoDataPreview.location
+            title = experienceInfoDataPreview.title,
+            type = experienceInfoDataPreview.type,
+            serviceBudget = experienceInfoDataPreview.serviceBudget,
+            period = periodValue,
+            location = location,
+            navController = rememberNavController()
         )
     }
 }

@@ -2,8 +2,8 @@ package com.pemeta.pemetacard.ui.screen.home
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.pemeta.pemetacard.data.PemetaCardRepository
-import com.pemeta.pemetacard.model.CompanyExperience
+import com.pemeta.pemetacard.data.repository.PemetaCardRepository
+import com.pemeta.pemetacard.model.pengalaman.model.CompanyExperience
 import com.pemeta.pemetacard.model.UiState
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

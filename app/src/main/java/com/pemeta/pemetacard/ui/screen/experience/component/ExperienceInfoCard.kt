@@ -26,7 +26,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.pemeta.pemetacard.model.DataPemetaExperience
+import com.pemeta.pemetacard.model.pengalaman.coredata.DataPemetaExperience
 import com.pemeta.pemetacard.R
 import com.pemeta.pemetacard.ui.theme.PemetaCardTheme
 

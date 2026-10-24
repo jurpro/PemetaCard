@@ -1,15 +1,19 @@
 package com.pemeta.pemetacard.ui.screen.experience.list.component
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
@@ -26,40 +30,52 @@ import com.pemeta.pemetacard.ui.theme.PemetaCardTheme
 @Composable
 fun TopBar(navController: NavController) {
 
-    Row(modifier = Modifier.fillMaxWidth()) {
-        Column(modifier = Modifier.padding(16.dp)) {
-            Text(
-                text = buildAnnotatedString {
-                    withStyle(
-                        style = SpanStyle(
-                            fontWeight = FontWeight.Medium,
-                            color = MaterialTheme.colorScheme.onPrimaryContainer
-                        )) {
-                        append(stringResource(R.string.welcome_message))
-                        append(", ")
-                    }
-                    withStyle(
-                        style = SpanStyle(
-                            fontWeight = FontWeight.ExtraBold,
-                            color = MaterialTheme.colorScheme.onPrimaryContainer
-                        )) {
-                        append(stringResource(R.string.profile_name))
-                    }
-                },
-                textAlign = TextAlign.Start,
-                style = MaterialTheme.typography.labelLarge,
-                color = MaterialTheme.colorScheme.onPrimaryContainer,
-            )
+    Column(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(8.dp),
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Image(
+            painter = painterResource(R.drawable.logo_pemeta_2024_hitam_baru),
+            contentDescription = stringResource(R.string.company_name),
+            contentScale = ContentScale.Fit,
+            alignment = Alignment.Center,
+            modifier = Modifier
+                .padding(8.dp)
+                .width(150.dp)
+        )
+        Text(
+            text = buildAnnotatedString {
+                withStyle(
+                    style = SpanStyle(
+                        fontWeight = FontWeight.Medium,
+                        color = MaterialTheme.colorScheme.onPrimaryContainer,
+                    )) {
+                    append(stringResource(R.string.welcome_message))
+                    append(", ")
+                }
+                withStyle(
+                    style = SpanStyle(
+                        fontWeight = FontWeight.ExtraBold,
+                        color = MaterialTheme.colorScheme.onPrimaryContainer
+                    )) {
+                    append(stringResource(R.string.profile_guest))
+                }
+            },
+            textAlign = TextAlign.Start,
+            style = MaterialTheme.typography.labelLarge,
+            color = MaterialTheme.colorScheme.onPrimaryContainer,
+        )
 
-            Spacer(modifier = Modifier.height(6.dp))
+        Spacer(modifier = Modifier.height(6.dp))
 
-            Text(
-                text = stringResource(R.string.welcome_message_1),
-                textAlign = TextAlign.Start,
-                style = MaterialTheme.typography.bodySmall,
-                color = MaterialTheme.colorScheme.onPrimaryContainer
-            )
-        }
+        Text(
+            text = stringResource(R.string.welcome_message_1),
+            textAlign = TextAlign.Start,
+            style = MaterialTheme.typography.bodySmall,
+            color = MaterialTheme.colorScheme.onPrimaryContainer
+        )
     }
 }
 

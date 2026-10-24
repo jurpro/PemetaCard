@@ -7,7 +7,7 @@ data class MyItem(
     val itemPosition: LatLng,
     val itemTitle: String,
     val itemSnippet: String,
-) : ClusterItem {
+) /* : ClusterItem {
     override fun getPosition(): LatLng =
         itemPosition
 
@@ -19,4 +19,4 @@ data class MyItem(
 
     override fun getZIndex(): Float =
         0f
-}
+} */

@@ -21,22 +21,32 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.pemeta.pemetacard.R
-import com.pemeta.pemetacard.model.DataPemetaExperience
+import com.pemeta.pemetacard.model.pengalaman.coredata.DataPemetaExperience
+import com.pemeta.pemetacard.model.pengalaman.model.JobType
+import com.pemeta.pemetacard.navigation.ScreenMenu
 import com.pemeta.pemetacard.ui.theme.PemetaCardTheme
 
 @Composable
-fun ExperienceTag(type: String) {
-    val color = if ( type == "Perencanaan Jalan") {
+fun ExperienceTag(
+   // type: String,
+    experienceType: JobType,
+    navController: NavController
+) {
+    val jobType = experienceType.name
+
+    val color = if ( jobType == "Perencanaan Jalan") {
         R.color.road_planing_color
     } else {
-        if ( type == "Pengawasan Jalan") {
+        if ( jobType == "Pengawasan Jalan") {
             R.color.road_supervision_color
         } else {
-            if ( type == "Pengawasan Jembatan") {
+            if ( jobType == "Pengawasan Jembatan") {
                 R.color.bridge_supervision_color
             } else {
-                if ( type == "Perencanaan Jembatan") {
+                if ( jobType == "Perencanaan Jembatan") {
                     R.color.bridge_planning_color
                 } else {
                     R.color.other_color
@@ -46,13 +56,18 @@ fun ExperienceTag(type: String) {
     }
 
     ChipViewExperienceType(
-        experienceType = type,
-        colorResource = colorResource(id = color)
+        experienceType = experienceType,
+        colorResource = colorResource(id = color),
+        navController = navController
     )
 }
 
 @Composable
-fun ChipViewExperienceType(experienceType: String, colorResource: Color) {
+fun ChipViewExperienceType(
+    experienceType: JobType,
+    colorResource: Color,
+    navController: NavController
+) {
     val context = LocalContext.current
 
     Box(
@@ -60,10 +75,11 @@ fun ChipViewExperienceType(experienceType: String, colorResource: Color) {
             .wrapContentWidth()
             .clip(RoundedCornerShape(12.dp))
             .background(colorResource.copy(.08f))
-            .clickable { Toast.makeText(context, R.string.clickable_dev_detail, Toast.LENGTH_LONG).show() },
+            .clickable { navController.navigate(ScreenMenu.DetailType.createRoute(typeId = experienceType.id)) },
+           // .clickable { Toast.makeText(context, R.string.clickable_dev_detail, Toast.LENGTH_LONG).show() },
     ) {
         Text(
-            text = experienceType,
+            text = experienceType.name,
             modifier = Modifier
                 .padding(12.dp, 6.dp, 12.dp, 6.dp)
                 .width(85.dp),
@@ -83,6 +99,9 @@ fun ExperienceTagPreview(){
     val typePreview = DataPemetaExperience.CompanyExperienceList[2]
 
     PemetaCardTheme {
-        ExperienceTag(typePreview.type)
+        ExperienceTag(
+            experienceType = typePreview.type,
+            navController = rememberNavController()
+        )
     }
 }

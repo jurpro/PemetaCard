@@ -20,20 +20,28 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.pemeta.pemetacard.R
-import com.pemeta.pemetacard.model.DataPemetaExperience
+import com.pemeta.pemetacard.model.pengalaman.coredata.DataPemetaExperience
+import com.pemeta.pemetacard.model.pengalaman.model.ServiceBudget
+import com.pemeta.pemetacard.navigation.ScreenMenu
 import com.pemeta.pemetacard.ui.theme.PemetaCardTheme
 
 @Composable
-fun ServiceBudgetTypeTag(serviceBudget: String) {
+fun ServiceBudgetTypeTag(
+    serviceBudget: ServiceBudget,
+    navController: NavController
+) {
+    val serviceBudgetType = serviceBudget.code
 
-    val color = if ( serviceBudget == "APBN") {
+    val color = if ( serviceBudgetType == "APBN") {
         R.color.orange_500
     } else {
-        if ( serviceBudget == "APBD") {
+        if ( serviceBudgetType == "APBD") {
             R.color.green_light
         } else {
-            if ( serviceBudget == "Swasta") {
+            if ( serviceBudgetType == "Swasta") {
                 R.color.green_orange
             } else {
                 R.color.other_color
@@ -42,13 +50,18 @@ fun ServiceBudgetTypeTag(serviceBudget: String) {
     }
 
     ChipViewServiceBudgetType(
-        serviceBudgetType = serviceBudget,
-        colorResource = colorResource(id = color)
+        serviceBudget = serviceBudget,
+        colorResource = colorResource(id = color),
+        navController = navController
     )
 }
 
 @Composable
-fun ChipViewServiceBudgetType(serviceBudgetType: String, colorResource: Color) {
+fun ChipViewServiceBudgetType(
+    serviceBudget: ServiceBudget,
+    colorResource: Color,
+    navController: NavController
+) {
     val context = LocalContext.current
 
     Box(
@@ -56,15 +69,16 @@ fun ChipViewServiceBudgetType(serviceBudgetType: String, colorResource: Color) {
             .wrapContentWidth()
             .clip(RoundedCornerShape(12.dp))
             .background(colorResource.copy(.08f))
-            .clickable {
+            .clickable { navController.navigate(ScreenMenu.DetailService.createRoute(serviceId = serviceBudget.id)) },
+           /* .clickable {
                 Toast.makeText(
                     context,
                     R.string.clickable_budget_detail.toString().plus(serviceBudgetType),
                     Toast.LENGTH_LONG).show()
-            },
+            }, */
     ) {
         Text(
-            text = serviceBudgetType,
+            text = serviceBudget.code,
             modifier = Modifier
                 .padding(12.dp, 6.dp, 12.dp, 6.dp)
                 .width(85.dp),
@@ -84,7 +98,8 @@ fun ServiceBudgetTypeTagPreview (){
         val serviceBudgetPreview = DataPemetaExperience.CompanyExperienceList[0]
 
         ServiceBudgetTypeTag(
-            serviceBudget = serviceBudgetPreview.serviceBudget
+            serviceBudget = serviceBudgetPreview.serviceBudget,
+            navController = rememberNavController()
         )
     }
 }

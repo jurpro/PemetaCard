@@ -9,11 +9,17 @@
     <string name="menu_favorite">Favorite</string>
     <string name="menu_chat_celebrity">Celebrity</string>
     <string name="menu_profile">Profile</string>
+    <string name="menu_client">Client</string>
+    <string name="menu_team">Team</string>
+    <string name="menu_info">Info</string>
+    <string name="menu_info_news">News Info Pemeta</string>
+    <string name="menu_legalitas">Legalitas</string>
     <string name="menu_about">About</string>
     <string name="menu_camera">Camera</string>
     <string name="menu_maps">Maps</string>
     <string name="menu_partner">Partner</string>
     <string name="menu_experience">Pengalaman</string>
+    <string name="menu_ongoing">OnGoing</string>
     <string name="menu_search">Seacrh</string>
 
     // Top Bar
@@ -21,6 +27,15 @@
     <string name="topbar_profile">Profile</string>
     <string name="topbar_inbox">Inbox</string>
     <string name="topbar_absensi">Absensi</string>
+
+    // Top App Bar
+    <string name="untitled">&lt;Untitled&gt;</string>
+
+    //Team
+    <string name="team_header">• Team Pemeta</string>
+    <string name="team_direksi">Manajemen Direksi</string>
+    <string name="team_design">Design Team</string>
+    <string name="team_supervision">Supervision Team</string>
 
     //Search
     <string name="placeholder_search">Cari laporan</string>
@@ -37,10 +52,12 @@
     <string name="list_recent_report_more">More Recent Report</string>
     <string name="list_experiences">Pengalaman Pemeta</string>
     <string name="list_experiences_more">More Pengalaman Pemeta</string>
+    <string name="list_onGoing">Pengalaman On Going</string>
+    <string name="list_experiences_by_client">Pengalaman Pemeta pada Dinas/Satker Terkait</string>
 
     //Detail Page Pengalaman Perusahaan
     <string name="detail_experience_info">Detail Pengalaman</string>
-    <string name="detail_experience_info_card">Informasi Singkat</string>
+    <string name="detail_experience_info_card">Informasi Paket Pekerjaan</string>
     <string name="detail_experience_description">Uraian Singkat</string>
     <string name="detail_experience_client">Pemilik Pekerjaan</string>
     <string name="detail_experience_partner">Partner KSO</string>
@@ -49,11 +66,24 @@
     <string name="detail_experience_period">Periode Pelaksanaan</string>
     <string name="detail_experience_amount">Nilai Kontrak</string>
     <string name="detail_experience_contract_number">Nomor Kontrak</string>
+    <string name="detail_experience_news_info">Kegiatan Proyek Ini</string>
+    <string name="detail_experience_maps">Lokasi Proyek</string>
+
+    //Halaman Legalitas
+    <string name="list_legalitas">Legalitas Pemeta</string>
+    <string name="list_legalitas_more">More Legalitas Pemeta</string>
 
     //Detail Client Information
     <string name="detail_client_code">Satker </string>
     <string name="detail_client_name">Full Name</string>
     <string name="detail_client_address">Alamat</string>
+    <string name="list_clients">Satker/Dinas</string>
+    <string name="list_clients_more">More Satker/Dinas</string>
+
+    // News Info dan Detail News
+    <string name="detail_news_code">Kegiatan Pekerjaan </string>
+    <string name="detail_news_description">Informasi Kegiatan</string>
+    <string name="detail_news_date">Tanggal Kegiatan</string>
 
     //Detail Page Information
     <string name="detail_animal_info">Report Info</string>
@@ -75,6 +105,7 @@
     // Halaman Profile
     <string name="profile_title">Profile Saya</string>
     <string name="profile_name">Sandra Bullock</string>
+    <string name="profile_guest">Tamu Kami Terhormat</string>
     <string name="profile_email">ujanglukmanbdg@gmail.com</string>
     <string name="profile_bio">Menikmati masa muda dengan bijaksana, memanfaatkan masa remaja dengan bijaksini.</string>
     <string name="profile_address">Bandung, Indonesia</string>
@@ -86,6 +117,12 @@
     <string name="about_pemeta_1">Aplikasi Pemeta Monitoring System dibuat untuk memudahkan proses pengawasan di lapangan juga untuk mengkordinir pekerjaan perencanaan.</string>
     <string name="about_pemeta_2">Selain itu, aplikasi ini menyediakan informasi pengalaman perusahaan selama 10 tahun terakhir.</string>
     <string name="about_pemeta_3">Pada tahap pengembangan ini, kami harap Anda dapat memberikan masukan atas kemudahan dan kekurangan fitur-fitur yang berhubungan dengan pekerjaan.\nTerima kasih.</string>
+
+    // Halaman About
+    <string name="about_pemetacard_0">Sampurasun</string>
+    <string name="about_pemetacard_1">Perkenalkan kami dari Tarucing yang saat ini sedang mengembangkan berbagai aplikasi, salah satunya adalah aplikasi yang sedang Anda gunakan yaitu, Tarucing Pet.</string>
+    <string name="about_pemetacard_2">Tarucing Pet adalah aplikasi koleksi hewan lucu peliharaan selebritis dunia. Untuk saat ini, koleksi-koleksi tersebut datang dari Angelina Jolie, Julia Roberts, Tom Cruise, Bruce Willis, dan Anggun.</string>
+    <string name="about_pemetacard_3">Semoga Anda dapat menemukan koleksi-koleksi cantik dari peliharaan para selebritis dunia tersebut.</string>
 
     <string name="error">Error</string>
 
@@ -132,7 +169,7 @@
     <string name="upload_menu_cancel">Batal</string>
 
     //Copyright
-    <string name="pemeta_copyright">Pemeta Engineering System, PT. \n &#169;2024 Pemeta. All rights reserved \nVersion 1.0.0</string>
+    <string name="pemeta_copyright">Pemeta Engineering System, PT. \n &#169;2024–2026 Pemeta. All rights reserved \nVersion 1.0.0</string>
 
     //Category
     <string name="category_planning">Perencanaan</string>
@@ -140,9 +177,25 @@
     <string name="category_road">Jalan</string>
     <string name="category_bridge">Jembatan</string>
 
-    // Halaman About
-    <string name="about_pemetacard_0">Sampurasun</string>
-    <string name="about_pemetacard_1">Perkenalkan kami dari Tarucing yang saat ini sedang mengembangkan berbagai aplikasi, salah satunya adalah aplikasi yang sedang Anda gunakan yaitu, Tarucing Pet.</string>
-    <string name="about_pemetacard_2">Tarucing Pet adalah aplikasi koleksi hewan lucu peliharaan selebritis dunia. Untuk saat ini, koleksi-koleksi tersebut datang dari Angelina Jolie, Julia Roberts, Tom Cruise, Bruce Willis, dan Anggun.</string>
-    <string name="about_pemetacard_3">Semoga Anda dapat menemukan koleksi-koleksi cantik dari peliharaan para selebritis dunia tersebut.</string>
+    // Setting Menu
+    <string name="feature_settings_top_app_bar_action_icon_description">Settings</string>
+    <string name="feature_settings_top_app_bar_navigation_icon_description">Search</string>
+    <string name="feature_settings_title">Settings</string>
+    <string name="feature_settings_loading">Loading…</string>
+    <string name="feature_settings_privacy_policy">Privacy policy</string>
+    <string name="feature_settings_licenses">Licenses</string>
+    <string name="feature_settings_brand_guidelines">Brand Guidelines</string>
+    <string name="feature_settings_feedback">Feedback</string>
+    <string name="feature_settings_theme">Theme</string>
+    <string name="feature_settings_brand_default">Default</string>
+    <string name="feature_settings_brand_android">Android</string>
+    <string name="feature_settings_dark_mode_preference">Dark mode preference</string>
+    <string name="feature_settings_dark_mode_config_system_default">System default</string>
+    <string name="feature_settings_dark_mode_config_light">Light</string>
+    <string name="feature_settings_dark_mode_config_dark">Dark</string>
+    <string name="feature_settings_dynamic_color_preference">Use Dynamic Color</string>
+    <string name="feature_settings_dynamic_color_yes">Yes</string>
+    <string name="feature_settings_dynamic_color_no">No</string>
+    <string name="feature_settings_dismiss_dialog_button_text">OK</string>
+
 </resources>

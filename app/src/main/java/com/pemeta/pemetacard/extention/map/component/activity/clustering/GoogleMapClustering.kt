@@ -58,7 +58,7 @@ fun GoogleMapClustering(items: List<MyItem>) {
             position = CameraPosition.fromLatLngZoom(singapore, 10f)
         }
     ) {
-        Clustering(
+       /* Clustering(
             items = items,
             // Optional: Handle clicks on clusters, cluster items, and cluster item info windows
             onClusterClick = {
@@ -100,6 +100,6 @@ fun GoogleMapClustering(items: List<MyItem>) {
                 Log.d(TAG, "Non-cluster marker clicked! $it")
                 true
             }
-        )
+        ) */
     }
 }

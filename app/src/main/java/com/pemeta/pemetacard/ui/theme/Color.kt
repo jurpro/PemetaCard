@@ -48,3 +48,6 @@ val PemetaTertiary = Color(0xFF386663)
 val PemetaError = Color(0xFFBA1A1A)
 val PemetaNeutral = Color(0xFF5E5F59)
 val PemetaNeutralVariant = Color(0xFF5C6054)
+
+val WarmGold = Color(0xffc8a96e)
+val minimalist_ground = Color(0xff09090f)

@@ -61,13 +61,22 @@ val Typography = Typography(
     labelMedium = TextStyle(
         fontFamily = EncodeSans,
         fontWeight = FontWeight.SemiBold,
-        fontSize = 14.sp
+        fontSize = 16.sp,
+        lineHeight = 16.sp,
+        letterSpacing = 0.sp
     ),
     labelSmall = TextStyle(
         fontFamily = EncodeSans,
         fontWeight = FontWeight.Medium,
         fontSize = 12.sp,
         lineHeight = 16.sp,
+        letterSpacing = 0.5.sp
+    ),
+    displaySmall = TextStyle(
+        fontFamily = EncodeSans,
+        fontWeight = FontWeight.Medium,
+        fontSize = 10.sp,
+        lineHeight = 10.sp,
         letterSpacing = 0.5.sp
     ),
     titleLarge = TextStyle(
